@@ -1,4 +1,5 @@
 import {faker} from "@faker-js/faker";
+import { writeToFile } from "./writer.js";
 
 const createRecord = (fName,lName, addr1, addr2, city, postal, state, email, phone1, phone2) => {
     return {fName,lName, addr1, addr2, city, postal, state, email, phone1, phone2};
@@ -23,7 +24,8 @@ const generateData = (count) => {
         records.push(record);
         i++;
     }
-    console.log(records);
+    return records;
 }
 
-generateData(2);
+const records = generateData(3);
+writeToFile(records);
