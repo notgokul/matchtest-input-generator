@@ -27,5 +27,5 @@ const generateData = (count) => {
     return records;
 }
 
-const records = generateData(3);
+const records = generateData(process.argv[2] ? process.argv[2] : 200);
 writeToFile(records);
